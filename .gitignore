@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# TensorFlow / training
+*.h5
+*.pb
+*.tflite
+*.ckpt
+*.ckpt.*
+events.out.tfevents.*
+
+# hls4ml / FPGA builds
+hls4ml_projects/
+my-hls4ml-project/
+*vivado*
+*.bit
+*.xpr
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.log
+*.jou
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp

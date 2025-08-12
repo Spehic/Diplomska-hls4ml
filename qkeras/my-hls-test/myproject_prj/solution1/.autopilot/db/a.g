@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/spehic/diplomska/mnist/qkeras/my-hls-test/myproject_prj/solution1/.autopilot/db/a.g.bc ${1+"$@"}
