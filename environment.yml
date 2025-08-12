@@ -1,4 +1,4 @@
-name: hls4ml-tutorial
+name: Diplomska-hls4ml
 channels:
   - conda-forge
 dependencies:
