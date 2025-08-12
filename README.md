@@ -1,16 +1,30 @@
 # Diplomska-hls4ml
-"Bachelor’s thesis: Review and implementation of hls4ml using TensorFlow for efficient machine learning model deployment on FPGAs."
 
-# Enviroment
+**Bachelor’s thesis:**  
+Review and implementation of hls4ml using TensorFlow for efficient machine learning model deployment on FPGAs.
 
-I recommend running this on Ubuntu 20.04
+---
 
-Running the tutorials requires Vivado 2020.1 to be installed. After the installation, the necessary environmental variables can be set using.
+## Environment Setup
 
-source /path/to/your/installtion/Xilinx/Vivado/2020.1/settings64.(c)sh
+This project is recommended to run on **Ubuntu 20.04**.
 
-The Python environment used for the tutorials is specified in the environment.yml file. It can be setup like:
+### Steps to set up the Python environment:
 
-conda env create -f environment.yml
-conda activate Diplomska-hls4ml
-source /path/to/your/installtion/Xilinx/Vivado/2020.1/settings64.(c)sh
+1. Make sure you have **Conda** installed (Miniconda or Anaconda).
+
+2. Create and activate the environment from the provided `environment.yml` file:
+
+    ```bash
+    conda env create -f environment.yml
+    conda activate Diplomska-hls4ml
+    ```
+
+3. Source the Xilinx Vivado environment settings script (replace the path below with your actual installation path):
+
+    ```bash
+    source /path/to/your/installation/Xilinx/Vivado/2020.1/settings64.sh
+    ```
+
+---
+
