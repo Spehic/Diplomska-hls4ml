@@ -12,12 +12,12 @@ x_test = x_test[..., tf.newaxis] / 255.0
 
 # 3. Build the CNN model
 model = tf.keras.Sequential([
-    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28, 28, 1)),
+    tf.keras.layers.Conv2D(8, (3,3), activation='relu', input_shape=(28, 28, 1)),
     tf.keras.layers.MaxPooling2D(2, 2),
-    tf.keras.layers.Conv2D(32, (3,3), activation='relu'),
+    tf.keras.layers.Conv2D(16, (3,3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2,2),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(32, activation='relu'),
+    tf.keras.layers.Dense(16, activation='relu'),
     tf.keras.layers.Dense(10, activation='softmax')
 ])
 

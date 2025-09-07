@@ -1,0 +1,121 @@
+AcceleratorConfig:
+  Board: pynq-z2
+  Driver: python
+  Interface: axi_stream
+  Precision:
+    Input: float
+    Output: float
+Backend: VivadoAccelerator
+ClockPeriod: 5
+ClockUncertainty: 12.5%
+HLSConfig:
+  LayerName:
+    flatten:
+      Precision:
+        result: auto
+      Trace: false
+    max_pooling2d_1:
+      ConvImplementation: LineBuffer
+      Precision:
+        accum: auto
+        result: auto
+      ReuseFactor: 64
+      Trace: false
+    max_pooling2d_2:
+      ConvImplementation: LineBuffer
+      Precision:
+        accum: auto
+        result: auto
+      ReuseFactor: 64
+      Trace: false
+    qconv2d_1:
+      ConvImplementation: LineBuffer
+      ParallelizationFactor: 1
+      Precision:
+        accum: auto
+        bias: fixed<4,1,TRN,WRAP,0>
+        result: auto
+        weight: fixed<4,1,TRN,WRAP,0>
+      ReuseFactor: 64
+      Trace: false
+    qconv2d_1_input:
+      Precision:
+        result: auto
+      Trace: false
+    qconv2d_1_quantized_relu:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT,0>
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 64
+      TableSize: 1024
+      Trace: false
+    qconv2d_2:
+      ConvImplementation: LineBuffer
+      ParallelizationFactor: 1
+      Precision:
+        accum: auto
+        bias: fixed<4,1,TRN,WRAP,0>
+        result: auto
+        weight: fixed<4,1,TRN,WRAP,0>
+      ReuseFactor: 64
+      Trace: false
+    qconv2d_2_quantized_relu:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT,0>
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 64
+      TableSize: 1024
+      Trace: false
+    qdense_1:
+      Precision:
+        accum: auto
+        bias: fixed<4,1,TRN,WRAP,0>
+        result: auto
+        weight: fixed<4,1,TRN,WRAP,0>
+      ReuseFactor: 64
+      Trace: false
+    qdense_1_quantized_relu:
+      Precision:
+        result: ufixed<4,0,RND_CONV,SAT,0>
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 64
+      TableSize: 1024
+      Trace: false
+    qdense_2:
+      Precision:
+        accum: auto
+        bias: fixed<4,1,TRN,WRAP,0>
+        result: auto
+        weight: fixed<4,1,TRN,WRAP,0>
+      ReuseFactor: 64
+      Trace: false
+    qdense_2_softmax:
+      Implementation: stable
+      Precision:
+        exp_table: fixed<18,8,RND,SAT,0>
+        inv_table: fixed<18,8,RND,SAT,0>
+        result: auto
+        table: fixed<18,8,TRN,WRAP,0>
+      ReuseFactor: 64
+      Skip: false
+      TableSize: 1024
+      Trace: false
+  Model:
+    BramFactor: 1000000000
+    Precision: ap_fixed<8,3>
+    ReuseFactor: 64
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_stream
+InputData: null
+KerasModel: !keras_model 'deleteme/keras_model.keras'
+OutputDir: deleteme
+OutputPredictions: null
+Part: xc7z020clg400-1
+ProjectName: myproject
+Stamp: 486f55ea
+Version: 1.0.0
+WriterConfig:
+  Namespace: null
+  WriteTar: false
+  WriteWeightsTxt: true

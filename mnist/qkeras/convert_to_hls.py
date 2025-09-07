@@ -24,12 +24,13 @@ config = hls4ml.utils.config_from_keras_model(model, granularity='name', backend
 # Set reuse factor (1 means fully parallel, higher means more reuse)
 #config['LayerName']['qconv2d_1']['ReuseFactor'] = 1
 #config['LayerName']['qconv2d_2']['ReuseFactor'] = 1
-config['Model']['Strategy'] = 'Resource' 
-config['LayerName']['qdense_1']['Strategy'] = 'Resource'
-config['LayerName']['qdense_2']['Strategy'] = 'Resource'
-config['LayerName']['qdense_1']['ReuseFactor'] = 64
-config['LayerName']['qdense_2']['ReuseFactor'] = 64
 
+#config['LayerName']['qdense_1']['Strategy'] = 'Resource'
+#config['LayerName']['qdense_2']['Strategy'] = 'Resource'
+#config['LayerName']['qdense_1']['ReuseFactor'] = 64
+#config['LayerName']['qdense_2']['ReuseFactor'] = 64
+
+config['Model']['Strategy'] = 'Resource' 
 
 
 print("-----------------------------------")
@@ -41,6 +42,7 @@ hls_model = hls4ml.converters.convert_from_keras_model(
    hls_config=config,
    backend='VivadoAccelerator',
    board='pynq-z2',
+   output_dir='hls_project',
    io_type='io_stream'
 )
 

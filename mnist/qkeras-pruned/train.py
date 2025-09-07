@@ -53,7 +53,7 @@ model = tf.keras.Sequential([
 ])
 
 # Setup up pruning
-pruning_params = {"pruning_schedule": pruning_schedule.ConstantSparsity(0.5, begin_step=2000, frequency=100)}
+pruning_params = {"pruning_schedule": pruning_schedule.ConstantSparsity(0.5, begin_step=0, frequency=100)}
 model = prune.prune_low_magnitude(model, **pruning_params)
 
 # Compile the model
@@ -69,7 +69,7 @@ callbacks = [
 ]
 
 # Train the model
-model.fit(x_train, y_train, batch_size=512,  epochs=10, validation_split=0.1, callbacks=callbacks)
+model.fit(x_train, y_train, batch_size=512,  epochs=5, validation_split=0.1, callbacks=callbacks)
 
 # Evaluate on test data
 test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)

@@ -62,7 +62,7 @@ test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
 print(f'\nTest accuracy: {test_acc:.4f}')
 
 model.summary()
-model.save('mnist_qkeras_model.h5')
+model.save('model.h5')
 
 # Make predictions
 predictions = model.predict(x_test)
